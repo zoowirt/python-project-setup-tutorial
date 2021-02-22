@@ -499,7 +499,18 @@ Clicking the play button indeed runs the test:
 
 ### Enable logging in a test run
 
-As one can see in the screenshot above, the logging messages that we introduced in `add_numbers` are not displayed by default.
+As one can see in the screenshot above, the logging messages that we introduced in `add_numbers` are not displayed by default. To active the log messages, in the `test` folder we create a file `pytest.ini` with the following content:
+
+```
+[pytest]
+python_classes = !TestResult
+log_cli = true
+log_cli_level = INFO
+log_cli_format = %(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)
+log_cli_date_format=%Y-%m-%d %H:%M:%S
+```
+
+Running the test again, the log messages are now displayed.
 
 ```
 -------------------------------- live log call ---------------------------------
