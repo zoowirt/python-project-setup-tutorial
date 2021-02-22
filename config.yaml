@@ -1,0 +1,7 @@
+value_1: 'some_string'
+
+value_2: [1, 2, 3]
+
+value_dict:
+  value_3: 'another_string'
+  value_4: 10
